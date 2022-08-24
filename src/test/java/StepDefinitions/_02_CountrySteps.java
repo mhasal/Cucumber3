@@ -19,6 +19,7 @@ public class _02_CountrySteps {
 
     @When("Create a Country")
     public void createACountry() {
+        dc.findAndClick("acceptCookies");
         dc.findAndClick("addButton");
         dc.findAndSend("nameInput","ulke151");
         dc.findAndSend("codeInput","1111");
@@ -28,5 +29,12 @@ public class _02_CountrySteps {
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
         dc.findAndContainsText("successMessage","success");
+    }
+    @When("Create a Country name as {string} code as {string}")
+    public void createACountryNameAsCodeAs(String name, String code){
+        dc.findAndClick("addButton");
+        dc.findAndSend("nameInput",name);
+        dc.findAndSend("codeInput",code);
+        dc.findAndClick("saveButton");
     }
 }
