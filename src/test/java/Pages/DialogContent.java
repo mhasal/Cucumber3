@@ -17,6 +17,8 @@ public class DialogContent extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
     @FindBy(id = "mat-input-0")
     private WebElement username;
 
@@ -53,7 +55,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@aria-label='Close dialog']")
     private WebElement closeDialog;
 
-    @FindBy(xpath = "//ms-text-field[contains(@placeholder,'FIELD.NAME')]//input")
+    @FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix ng-tns-c74')]//input)[1]")
     private WebElement searchInput;
 
     @FindBy(xpath = "//ms-search-button//button")
@@ -70,9 +72,6 @@ public class DialogContent extends Parent {
 
     @FindBy (xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     private WebElement priorityCode;
-
-    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
-    private WebElement acceptCookies;
 
 
     WebElement myElement;
@@ -108,6 +107,8 @@ public class DialogContent extends Parent {
     public void findAndClick(String strElement) {  // 2.aşama
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
+            case "acceptCookies" :
+                myElement = acceptCookies; break;
             case "loginButton":
                 myElement = loginButton;
                 break;
@@ -129,7 +130,7 @@ public class DialogContent extends Parent {
             case "deleteDialogBtn":
                 myElement = deleteDialogBtn;
                 break;
-            case "acceptCookies" : myElement = acceptCookies; break;
+
         }
 
         clickFunction(myElement);

@@ -25,11 +25,16 @@ Scenario: Create and Delete an Exam
     | gradeLevel2|
 
   And Click on the element in the Dialog
-    |saveButton|
+    | saveButton |
 
   Then Success message should be displayed
 
+  And Click on the element in the left Nav
+    | entranceExamsOne |
+    | setupTwo         |
+    | entranceExamsTwo |
+
   And User delete item from Dialog
-    | metinexam|
+    | metinexam |
 
   Then Success message should be displayed
