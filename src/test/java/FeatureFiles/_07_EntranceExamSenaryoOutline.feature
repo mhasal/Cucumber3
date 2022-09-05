@@ -1,3 +1,12 @@
+#  Bir önceki Exam Giriş Senaryosunu
+#  Aşağıdaki değerler için çalıştırınız.
+#
+#| ExamName        | AcademicPeriodOption      | GradeLevelOption |
+#| Math exam is1   | academicPeriod2              | gradeLevel4  |
+#| IT exam is1     | academicPeriod2              | gradeLevel2  |
+#| Oracle exam is1 | academicPeriod2              | gradeLevel3  |
+#| Math exam  is1  | academicPeriod2              | gradeLevel1  |
+
 Feature: Entrance Exam Functionality
 
   Background:
@@ -5,8 +14,7 @@ Feature: Entrance Exam Functionality
     When Enter username and password and click login button
     Then User should login successfuly
 
-  Scenario Outline: Create and Delete an Exam
-
+  Scenario Outline: Create and Delete a Exam
     And Click on the element in the left Nav
       | entranceExamsOne |
       | setupTwo         |
@@ -19,10 +27,12 @@ Feature: Entrance Exam Functionality
       | nameInput | <ExamName> |
 
     And Click on the element in the Form Content
-      | academicPeriod |
+      | academicPeriod         |
       | <AcademicPeriodOption> |
-      | gradeLevel |
-      | <GradeLevelOption> |
+      | gradeLevel             |
+      | <GradeLevelOption>     |
+
+    #TODO: Akademik period ve GradeLevel tıklanma problemi
 
     And Click on the element in the Dialog
       | saveButton |
@@ -40,10 +50,11 @@ Feature: Entrance Exam Functionality
     Then Success message should be displayed
 
     Examples:
-      | ExamName    | AcademicPeriodOption | GradeLevelOption |
-      | met exam 1  | academicPeriod1      | gradeLevel2      |
-      | met exam 2  | academicPeriod1      | gradeLevel2      |
-      | met exam 3  | academicPeriod1      | gradeLevel2      |
-      | met exam 4  | academicPeriod1      | gradeLevel2      |
+      | ExamName        | AcademicPeriodOption | GradeLevelOption |
+      | Math exam i11   | academicPeriod1      | gradeLevel2      |
+      | IT exam i11     | academicPeriod1      | gradeLevel2      |
+      | Oracle exam i11 | academicPeriod1      | gradeLevel2      |
+      | Math exam  i11  | academicPeriod1      | gradeLevel2      |
 
-    #TODO yukarıdaki akademik ve Grade Level Option için academicPeriod2 ve gradeLevel1,3,4 bulunup example koyulacak.
+      #TODO yukarıdaki akademik ve Grade Level option için academicPeriod2  ve gradeLevel1,3,4  bulunup exapmple koyulacak
+

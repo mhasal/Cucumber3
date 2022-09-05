@@ -17,9 +17,12 @@ Feature:  Citizenship with scenario Outline
     When User delete the "<CitizenshipName>"
     Then Success message should be displayed
 
-      Examples:
-        | CitizenshipName  | ShortName |
-        | metin1  | metinnn1 |
-        | metin2  | metinnn2 |
-        | metin3  | metinnn3 |
-        | metin4  | metinnn4 |
+    Examples:
+      | CitizenshipName | ShortName |
+      | vatan1a         | vat1      |
+      | vatan2a         | vat2      |
+      | vatan3a         | vat3      |
+      | vatan4a         | vat4      |
+      | vatan5a         | vat5      |
+
+

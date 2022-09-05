@@ -11,18 +11,18 @@ Feature: Fee Functionality
   Scenario Outline: Create a Fee, delete Fee
 
     And Click on the element in the left Nav
-      | setupOne      |
-      | parameters    |
-      | fees |
+      | setupOne   |
+      | parameters |
+      | fees       |
 
     And Click on the element in the Dialog
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput       | <name>      |
-      | codeInput       | <code>      |
-      | integrationCode | <integration>|
-      | priorityCode    | <priority>   |
+      | nameInput       | <name>     |
+      | codeInput       | <code>     |
+      | integrationCode | <intCode>  |
+      | priorityCode    | <priority> |
 
     And Click on the element in the Dialog
       | saveButton |
@@ -35,9 +35,7 @@ Feature: Fee Functionality
     And Success message should be displayed
 
     Examples:
-      | name  | code | integration | priority |
-      | met2314    | 510       | 214             | 219          |
-      | met2315    | 519       | 214             | 219          |
-      | met2316    | 518       | 214             | 219          |
-      | met2317    | 516       | 214             | 219          |
-      | met2318    | 511       | 214             | 219          |
+      | name      | code    | intCode   | priority |
+      | IsmetFee1 | 0100001 | paypal    | 754      |
+      | IsmetFee2 | 0100020 | applePay  | 765      |
+      | IsmetFee3 | 0230001 | googlePay | 755      |

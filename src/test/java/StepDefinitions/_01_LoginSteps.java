@@ -32,11 +32,20 @@ public class _01_LoginSteps {
         dc.findAndClick("loginButton");
     }
 
+    @Then("User should login successfully")
+    public void userShouldLoginSuccessfully() {
+        //        dc.waitUntilVisible(dc.dashboard);
+//        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
+        dc.findAndContainsText("dashboard","Dashboard");
+        dc.findAndClick("acceptCookies");
+
+    }
+
     @Then("User should login successfuly")
     public void userShouldLoginSuccessfuly() {
-//        dc.waitUntilVisible(dc.dashboard);
+        //        dc.waitUntilVisible(dc.dashboard);
 //        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
-
         dc.findAndContainsText("dashboard","Dashboard");
+        dc.findAndClick("acceptCookies");
     }
 }

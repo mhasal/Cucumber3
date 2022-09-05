@@ -15,8 +15,8 @@ Feature: Datatable Functionality
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput | metcou1 |
-      | codeInput | 121232   |
+      | nameInput | ismetCoun21 |
+      | codeInput | 121233      |
 
     And Click on the element in the Dialog
       | saveButton |
@@ -24,7 +24,7 @@ Feature: Datatable Functionality
     And Success message should be displayed
 
     And User delete item from Dialog
-      | metcou1 |
+      | ismetCoun21 |
 
     And Success message should be displayed
 
@@ -38,7 +38,7 @@ Feature: Datatable Functionality
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput | met211 |
+      | nameInput | ismetNat21 |
 
     And Click on the element in the Dialog
       | saveButton |
@@ -46,25 +46,25 @@ Feature: Datatable Functionality
     And Success message should be displayed
 
     And User delete item from Dialog
-      | met211 |
+      | ismetNat21 |
 
     And Success message should be displayed
 
   Scenario: Create a Fee, delete Fee
 
     And Click on the element in the left Nav
-      | setupOne      |
-      | parameters    |
-      | fees |
+      | setupOne   |
+      | parameters |
+      | fees       |
 
     And Click on the element in the Dialog
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInput       | met215 |
-      | codeInput       | 213    |
-      | integrationCode | 217    |
-      | priorityCode    | 219    |
+      | nameInput       | ismetFee1 |
+      | codeInput       | i123      |
+      | integrationCode | 1233      |
+      | priorityCode    | 422       |
 
     And Click on the element in the Dialog
       | saveButton |
@@ -72,7 +72,14 @@ Feature: Datatable Functionality
     And Success message should be displayed
 
     And User delete item from Dialog
-      | met215 |
+      | ismetFee1 |
 
     And Success message should be displayed
+
+
+
+
+    #    Senaryo Outline da verilen değerler için tüm senaryo her satır kadar tekrar çalıştırılıyordu.
+    #    DataTable da ise, sadece ilgili step için toplu veri gönderme imkanı oluşuyor.
+    #    TODO: Kaymakçı tablo yuklenmesini
 

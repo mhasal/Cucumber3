@@ -2,6 +2,7 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -158,16 +159,25 @@ public class DialogContent extends Parent {
         findAndSend("searchInput", searchText); // aranacak kelimeyi kutucuğa gönder
         findAndClick("searchButton"); // arama butonuna bas
 
+        // scrollToUpElement(searchButton); // alttaki method
+
 //        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.stalenessOf(deleteButton));
 
-        waitUntilLoading();
-
+       // waitUntilLoading();
+        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full']"),"Search"));
         // GWD.Bekle(2);
+
+
 
         findAndClick("deleteButton");// silme butonuna bas
         findAndClick("deleteDialogBtn");// dialogdaki silme butonuna bas
     }
 
-
+    public void scrollToUpElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].setAttribute('style', 'top:0px')", element);
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
 }

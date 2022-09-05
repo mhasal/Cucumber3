@@ -3,13 +3,15 @@ Feature: Country Multi Scenario
   Background:
     Given Navigate to basqar
     When Enter username and password and click login button
-    Then User should login successfully
-    And Navigate to Country Page
+    Then User should login successfuly
+    And Navigate to country page
 
+  @Regression
   Scenario: Create a country
-    When Create a Country
+    When Create a country
     Then Success message should be displayed
 
-  Scenario: Create a country parameter data
-    When Create a Country name as "metinDeneme" code as "code0123"
+  @Regression
+  Scenario: Create a counrty parameter data
+    When Create a country name as "ismetYeni2" code as "code2"
     Then Success message should be displayed
