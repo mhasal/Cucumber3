@@ -25,5 +25,4 @@ public class _07_TestRunnerExtentReport extends AbstractTestNGCucumberTests
         ExtentService.getInstance().setSystemInfo("Department", "QA");
         ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
     }
-
 }

@@ -1,14 +1,15 @@
 package Pages;
 
 import Utilities.GWD;
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Parent {
 
@@ -54,6 +55,12 @@ public class Parent {
         WebDriverWait wait = new WebDriverWait(GWD.driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"),0));
 
+    }
+
+    public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList){
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
+        return elementList;
     }
 
 }

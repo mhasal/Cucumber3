@@ -170,7 +170,6 @@ public class DialogContent extends Parent {
         // GWD.Bekle(2);
 
 
-
         findAndClick("deleteButton");// silme butonuna bas
         findAndClick("deleteDialogBtn");// dialogdaki silme butonuna bas
     }
