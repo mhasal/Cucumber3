@@ -21,7 +21,7 @@ public class _08_TestRunnerParallel_ExtendReport extends AbstractTestNGCucumberT
     public void beforeClass(String browser)
     {
         GWD.threadBrowserName.set(browser);
-        //burada browser set edilecek
+       //burada browser set edilecek
         // bu threade browsername set edildi.
     }
 

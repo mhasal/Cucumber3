@@ -1,7 +1,6 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Pages.Parent;
 import Utilities.GWD;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +12,9 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class _01_LoginSteps {
-    DialogContent dc = new DialogContent();
+    DialogContent dc=new DialogContent();
+
+
     @Given("Navigate to basqar")
     public void navigateToBasqar() {
         GWD.getDriver().get("https://demo.mersys.io/");
@@ -32,19 +33,11 @@ public class _01_LoginSteps {
         dc.findAndClick("loginButton");
     }
 
-    @Then("User should login successfully")
-    public void userShouldLoginSuccessfully() {
-        //        dc.waitUntilVisible(dc.dashboard);
-//        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
-        dc.findAndContainsText("dashboard","Dashboard");
-        dc.findAndClick("acceptCookies");
-
-    }
-
     @Then("User should login successfuly")
     public void userShouldLoginSuccessfuly() {
-        //        dc.waitUntilVisible(dc.dashboard);
+//        dc.waitUntilVisible(dc.dashboard);
 //        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
+
         dc.findAndContainsText("dashboard","Dashboard");
         dc.findAndClick("acceptCookies");
     }

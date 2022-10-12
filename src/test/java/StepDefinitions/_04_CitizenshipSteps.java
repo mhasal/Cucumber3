@@ -2,14 +2,12 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
-import Pages.Parent;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class _04_CitizenshipSteps {
     DialogContent dc=new DialogContent();
-
     @And("Navigate to Citizenship page")
     public void navigateToCitizenshipPage() {
         LeftNav ln=new LeftNav();
@@ -35,7 +33,6 @@ public class _04_CitizenshipSteps {
     public void clickOnCloseButton() {
         dc.findAndClick("closeDialog");
     }
-
 
     @When("User delete the {string}")
     public void userDeleteThe(String arananKelime) {

@@ -9,9 +9,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCParent {
+
     private static Connection connection;
     protected static Statement statement;
-    private static void DBConnectionOpen()
+
+    @BeforeTest
+    public void DBConnectionOpen()
     {
         String url="jdbc:mysql://db-technostudy.ckr1jisflxpv.us-east-1.rds.amazonaws.com:3306/sakila";
         String username="root";
@@ -25,7 +28,8 @@ public class JDBCParent {
         }
     }
 
-    private static void DBConnectionClose()
+    @AfterTest
+    public void DBConnectionClose()
     {
         try {
             connection.close();

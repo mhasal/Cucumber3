@@ -1,8 +1,6 @@
 package ApachePOI;
 
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,26 +10,26 @@ public class _04_ApachePOIGetAllData {
 
         String path="src/test/java/ApachePOI/resource/ApacheExcel2.xlsx";
 
-        FileInputStream inputStream = new FileInputStream(path);
-        Workbook workbook = WorkbookFactory.create(inputStream);
+        FileInputStream inputStream=new FileInputStream(path);
+        Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet = workbook.getSheet("Sheet1");
 
-        // calisma sayfasındaki toplam satır sayısını veriyor
-        int rowCount = sheet.getPhysicalNumberOfRows();
+        // calisma sayfasındaki toplam satır sayısını veriyor.
+        int satirSayisi=sheet.getPhysicalNumberOfRows();
 
-        for (int i = 0; i < rowCount; i++) {
+        for (int i = 0; i < satirSayisi; i++) {
 
-            Row row = sheet.getRow(i); // i.satır alındı
-            // bu satırdaki toplam hücre sayısı alındı
-            int cellCount = row.getPhysicalNumberOfCells();
+            Row satir= sheet.getRow(i); // i.Satır alındı
+            // bu satırdaki toplam hücre sayısı alındı.
+            int hucreSayisi = satir.getPhysicalNumberOfCells();
 
-            for (int j = 0; j < cellCount; j++) { // i. satırdaki hucre sayısı kadar dönecek
-                Cell cell = row.getCell(j);      // bu satırdaki sıradaki hücreyi aldım
-                System.out.print(cell+" ");
+            for (int j = 0; j < hucreSayisi; j++) { // i.satırdaki hucre sayısı kadar dönecek
+                Cell hucre = satir.getCell(j);    // bu satırdaki sıradaki hücreyi aldım.
+                System.out.print(hucre+" ");
             }
+
             System.out.println();
         }
-
 
     }
 }

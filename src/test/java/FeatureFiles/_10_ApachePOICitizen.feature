@@ -9,5 +9,5 @@ Feature: ApachePOI Citizen Functionality
     Scenario: Create citizenship from Excel
       When User Create citizenship with ApachePOI
 
-    Scenario: Delete citizenship from Excel
+    Scenario: delete citizenship from Excel
       Then User Delete citizenship with ApachePOI
